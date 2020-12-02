@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'corsheaders',
     'rest_framework',
+    'rest_framework.authtoken',
     'tinymce',
     'django.contrib.sites',
     'allauth',
@@ -156,7 +157,7 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': timedelta(days=2),
 }
 
-AUTH_USER_MODEL = 'hood.User'
+AUTH_USER_MODEL = 'hood.CustomUser'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [

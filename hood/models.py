@@ -6,6 +6,9 @@ from django.dispatch import receiver
 from cloudinary.models import CloudinaryField
 # Create your models here.
 
-class User(AbstractUser):
-    pass
+class CustomUser(AbstractUser):
+    name = models.CharField(blank=True, max_length=255)
+
+    def __str__(self):
+        return self.email
 
