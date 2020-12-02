@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 from datetime import timedelta
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,8 +47,17 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'tinymce',
-    
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth',
+    'rest_auth.registration',
 ]
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+REST_USE_JWT = True
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -84,8 +96,10 @@ WSGI_APPLICATION = 'neighbourhood.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hood',
+        'USER': 'ayebale',
+        'PASSWORD':'ayebale123',
     }
 }
 
@@ -142,6 +156,8 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': timedelta(days=2),
 }
 
+AUTH_USER_MODEL = 'hood.User'
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -151,3 +167,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CORS_ALLOW_ALL_ORIGINS=True
+
+cloudinary.config( 
+  cloud_name = "ayebale", 
+  api_key = "666635274179139", 
+  api_secret = "VgBLMVnsJ8dS2eNDVSp9ap6yTgY" 
+)
