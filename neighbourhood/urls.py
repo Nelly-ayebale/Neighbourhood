@@ -24,4 +24,5 @@ urlpatterns = [
     path('',include('hood.urls')),
     path('auth/login/', obtain_jwt_token),
     path('auth/refresh-token/', refresh_jwt_token),
+    path('tinymce/', include('tinymce.urls')),
 ]
