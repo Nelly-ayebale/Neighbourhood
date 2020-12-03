@@ -9,8 +9,8 @@ router = DefaultRouter()
 router.register(r"hood",HoodSetView)
 
 urlpatterns=[
-    path('index/',views.index,name='index'),
-    path('', views.UserListView.as_view()),
+    path('',views.index,name='index'),
+    path('userlist/', views.UserListView.as_view()),
 ] + router.urls
 
 if settings.DEBUG:
