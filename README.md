@@ -1,4 +1,4 @@
-# [Nieghbourhood](https://backend-hood.herokuapp.com/)
+# [Neighbourhood](https://backend-hood.herokuapp.com/)
 # Neighbourhood
 <table>
 <tr>
