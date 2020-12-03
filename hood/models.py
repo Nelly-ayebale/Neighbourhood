@@ -13,7 +13,7 @@ class CustomUser(AbstractUser):
     status = HTMLField(blank=True,null=True)
     neighbourhood = models.ForeignKey('Neighbourhood',on_delete=models.CASCADE,related_name='hood_user',null=True)
 
-    REQUIRED_FIELDS=['name']
+    
     def __str__(self):
         return self.email
 
