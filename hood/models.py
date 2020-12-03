@@ -29,4 +29,21 @@ class Neighbourhood(models.Model):
     
     def delete_hood(self):
         self.delete()
-        
+
+class Business(models.Model):
+    business_name = models.CharField(max_length=300)
+    description = HTMLField()
+    location = models.TextField(max_length=400)
+    email_address = models.EmailField(max_length=400)
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    hood = models.ForeignKey('Neighbourhood',on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.business_name
+    
+    def save_business(self):
+        self.save()
+    
+    def delete_business(self):
+        self.delete()
+

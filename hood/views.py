@@ -2,9 +2,9 @@ from django.shortcuts import render
 from rest_framework import generics
 from . import models
 from . import serializers
-from .serializers import NeighbourhoodSerializer
+from .serializers import NeighbourhoodSerializer,BusinessSerializer
 from rest_framework import viewsets
-from .models import Neighbourhood
+from .models import Neighbourhood,Business
 from .permissions import IsAdminOrReadOnly
 
 # Create your views here.
@@ -18,6 +18,11 @@ class UserListView(generics.ListAPIView):
 class HoodSetView(viewsets.ModelViewSet):
     serializer_class = NeighbourhoodSerializer
     queryset = Neighbourhood.objects.all()
+    permission_classes = [IsAdminOrReadOnly]
+
+class BusinessSetView(viewsets.ModelViewSet):
+    serializer_class = BusinessSerializer
+    queryset = Business.objects.all()
     permission_classes = [IsAdminOrReadOnly]
 
     
