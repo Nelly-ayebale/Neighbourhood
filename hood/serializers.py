@@ -5,7 +5,7 @@ from .models import Neighbourhood,Business
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.CustomUser
-        fields = ('email', 'username', )
+        fields = ('id','email', 'username','profile_photo','status','neighbourhood')
 
 class NeighbourhoodSerializer(serializers.ModelSerializer):
     class Meta:

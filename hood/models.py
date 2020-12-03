@@ -8,7 +8,11 @@ from cloudinary.models import CloudinaryField
 
 class CustomUser(AbstractUser):
     name = models.CharField(blank=True, max_length=255)
+    profile_photo = CloudinaryField('image',blank=True,null=True)
+    status = HTMLField(blank=True,null=True)
+    neighbourhood = models.ForeignKey('Neighbourhood',on_delete=models.CASCADE,related_name='hood_user',null=True)
 
+    REQUIRED_FIELDS=['name']
     def __str__(self):
         return self.email
 
@@ -19,7 +23,7 @@ class Neighbourhood(models.Model):
     occupants_count = models.IntegerField(blank=True,default=0)
     healthcentre_no = models.IntegerField(blank=True)
     police_no = models.IntegerField(blank=True)
-    admin = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+    admin = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='hood_hood')
 
     def __str__(self):
         return self.name
@@ -46,4 +50,3 @@ class Business(models.Model):
     
     def delete_business(self):
         self.delete()
-
