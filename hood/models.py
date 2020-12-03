@@ -9,6 +9,7 @@ from cloudinary.models import CloudinaryField
 
 class CustomUser(AbstractUser):
     name = models.CharField(blank=True, max_length=255)
+    email = models.EmailField(max_length=400)
     profile_photo = CloudinaryField('image',blank=True,null=True)
     status = HTMLField(blank=True,null=True)
     neighbourhood = models.ForeignKey('Neighbourhood',on_delete=models.CASCADE,related_name='hood_user',null=True)
