@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from . import models
-from .models import Neighbourhood,Business
+from .models import Neighbourhood,Business,Post
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,4 +15,9 @@ class NeighbourhoodSerializer(serializers.ModelSerializer):
 class BusinessSerializer(serializers.ModelSerializer):
     class Meta:
         model = Business
+        fields = '__all__'
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
         fields = '__all__'

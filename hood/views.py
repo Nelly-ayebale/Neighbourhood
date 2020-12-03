@@ -2,9 +2,9 @@ from django.shortcuts import render
 from rest_framework import generics
 from . import models
 from . import serializers
-from .serializers import NeighbourhoodSerializer,BusinessSerializer
+from .serializers import NeighbourhoodSerializer,BusinessSerializer,PostSerializer
 from rest_framework import viewsets
-from .models import Neighbourhood,Business
+from .models import Neighbourhood,Business,Post
 from .permissions import IsAdminOrReadOnly
 
 # Create your views here.
@@ -25,4 +25,7 @@ class BusinessSetView(viewsets.ModelViewSet):
     queryset = Business.objects.all()
     permission_classes = [IsAdminOrReadOnly]
 
-    
+class PostSetView(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+    permission_classes = [IsAdminOrReadOnly]

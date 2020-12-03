@@ -4,6 +4,7 @@ from tinymce.models import HTMLField
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from cloudinary.models import CloudinaryField
+
 # Create your models here.
 
 class CustomUser(AbstractUser):
@@ -24,6 +25,8 @@ class Neighbourhood(models.Model):
     healthcentre_no = models.IntegerField(blank=True)
     police_no = models.IntegerField(blank=True)
     admin = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='hood_hood')
+    business = models.ManyToManyField('Business',blank=True,related_name='hood_business')
+    
 
     def __str__(self):
         return self.name
@@ -40,7 +43,7 @@ class Business(models.Model):
     location = models.TextField(max_length=400)
     email_address = models.EmailField(max_length=400)
     user = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
-    hood = models.ForeignKey('Neighbourhood',on_delete=models.CASCADE)
+    hood = models.ForeignKey('Neighbourhood',on_delete=models.CASCADE,related_name='business_in_hood')
 
     def __str__(self):
         return self.business_name
@@ -49,4 +52,19 @@ class Business(models.Model):
         self.save()
     
     def delete_business(self):
+        self.delete()
+
+class Post(models.Model):
+    subject = models.TextField(max_length=400)
+    description = HTMLField()
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='hood_post_user')
+    hood_post = models.ForeignKey('Neighbourhood',on_delete=models.CASCADE,related_name='hood_posts')
+
+    def __str__(self):
+        return self.subject
+    
+    def save_post(self):
+        self.save()
+    
+    def delete_post(self):
         self.delete()
