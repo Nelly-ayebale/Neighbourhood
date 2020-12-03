@@ -1,14 +1,14 @@
-# [Awwwards](https://nellys-awards.herokuapp.com/)
-# Awwwards
+# [Nieghbourhood](https://backend-hood.herokuapp.com/)
+# Neighbourhood
 <table>
 <tr>
 <td>
-  A Django replica of the Awwwards web application where a user creates a profile,Uploads his/her websites where other users can rate/review them and vice versa.
+  The backend of a neighbourhood application that keeps track of what happens in different neighbourhood
 </td>
 </tr>
 </table>
 
-## [Usage](https://nellys-awards.herokuapp.com/)
+## [Usage](https://backend-hood.herokuapp.com/)
 
 ### Development
 Want to contribute? Great!
@@ -25,9 +25,9 @@ To fix a bug or enhance an existing module, follow these steps:
 
 ### Bug / Feature Request
 
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/Nelly-ayebale/awwwards/issues/new) by including your search query and the expected result.
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/Nelly-ayebale/Neighbourhood/issues/new) by including your search query and the expected result.
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/Nelly-ayebale/awwwards/issues/new). Please include sample queries and their corresponding results.
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/Nelly-ayebale/Neighbourhood/issues/new). Please include sample queries and their corresponding results.
 
 
 ## Built with 
@@ -38,18 +38,16 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 - Bootstrap4
 
 ## To-do
-- The application should display the user's profile.
-- The application should allow a user to upload their websites for a review/rating.
-- The application should display different websites and their details.
-- The user should also be allowed to rate other users websites once authenticated.
-- The user should be able to see the overall score of a Website's ratings.
-- The user should be able to search for different profiles.
+- The application should have 3 sets of users i.e the System Administrator,The Neighbourhood Admin and the Normal users.
+- All users can view the neighbourhoods but only the System Administrator and the Neighbourhood Admin can update the neighbourhoods.
+- Only the System Administrator can create Neighbourhoods.
+- Members(Normal Users) should be able to sign up and login the application.
+- Join only one neighbourhood and post new posts onto the neighbourhood posts.
+- The Neighbourhood Admin should be able to post Businesses and healthcentre numbers and police numbers.
 
-## Figma Blueprint
-[here](https://www.figma.com/file/c2pINnJKnJxPKcnj35Vjsd/Awwwards?node-id=1%3A2)
 
 ## Resources
-This website was helpful in extending the Django User Model using a One-to-One link [here](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
+This website was helpful in extending the Django User Model[here](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html)
 
 ## Admin Information
 - Username : Ayebale
