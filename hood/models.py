@@ -12,3 +12,21 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.email
 
+class Neighbourhood(models.Model):
+    name = models.CharField(max_length=250)
+    description = HTMLField()
+    location = models.TextField(max_length=400)
+    occupants_count = models.IntegerField(blank=True,default=0)
+    healthcentre_no = models.IntegerField(blank=True)
+    police_no = models.IntegerField(blank=True)
+    admin = models.ForeignKey(CustomUser,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+    
+    def save_hood(self):
+        self.save()
+    
+    def delete_hood(self):
+        self.delete()
+        
