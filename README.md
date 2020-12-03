@@ -53,5 +53,12 @@ This website was helpful in extending the Django User Model[here](https://simple
 - Username : Ayebale
 - Password : 1234
 
+## API ENDPOINTS
+- GET [To get Users]: https://backend-hood.herokuapp.com/userlist
+- POST [To Post Neighbourhoods-Only for Admin and appointed Staff Members] :https://backend-hood.herokuapp.com/hood
+- POST [To Post Businesses and their information- Only for Admin and appointed Staff Members] : https://backend-hood.herokuapp.com/business
+- REGISTER [For All Users ] : https://backend-hood.herokuapp.com/auth/signup/
+- LOGIN [For All Users ] : https://backend-hood.herokuapp.com/auth/login/
+
 [MIT](LICENSE) ©
 
