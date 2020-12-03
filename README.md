@@ -29,6 +29,9 @@ If you find a bug (the website couldn't handle the query and / or gave undesired
 
 If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/Nelly-ayebale/Neighbourhood/issues/new). Please include sample queries and their corresponding results.
 
+## Authors
+- [Kevin Ligare Ambundo](https://github.com/kevin3708)
+- [Ayebale Nelly Abigail](https://github.com/Nelly-ayebale)
 
 ## Built with 
 
