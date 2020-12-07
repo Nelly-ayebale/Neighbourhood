@@ -1,9 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser,User
 from tinymce.models import HTMLField
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from cloudinary.models import CloudinaryField
+import uuid
 
 # Create your models here.
 
@@ -69,3 +70,57 @@ class Post(models.Model):
     
     def delete_post(self):
         self.delete()
+
+class Hood(models.Model):
+    hood_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    hood_name = models.CharField(max_length=50)
+    location = models.CharField(max_length=50)
+    count = models.IntegerField(default=0)
+    admin = models.ForeignKey(CustomUser,on_delete=models.CASCADE,default='')
+    
+    def __str__(self):
+        return self.name
+    
+
+
+class Join(models.Model):
+    user = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='hood_join_user')
+    hood_name = models.ForeignKey(Hood,on_delete=models.CASCADE,related_name='hood_join')
+    location = models.ForeignKey(Hood , on_delete=models.CASCADE, related_name="hood_location_user",default='')
+
+    def __str__(self):
+        return self.description
+
+    def save_join(self):
+        self.save
+
+    def delete_join(self):
+        self.delete
+
+
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    location = models.ForeignKey(Hood, on_delete=models.CASCADE)
+    hood_name = models.ForeignKey(Hood,on_delete=models.CASCADE, related_name='profile_name')
+    avatar = CloudinaryField('image')
+
+    def __str__(self):
+        return self.user.username
+    
+    def save_image(self):
+        self.save()
+        
+    def delete_image(self):
+        self.delete()
+
+    @classmethod
+    def update(cls, id, value):
+        cls.objects.filter(id=id).update(avatar=value)
+        
+@receiver(post_save, sender=User)
+def update_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+    instance.profile.save()
