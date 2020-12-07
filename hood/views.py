@@ -2,9 +2,9 @@ from django.shortcuts import render
 from rest_framework import generics
 from . import models
 from . import serializers
-from .serializers import NeighbourhoodSerializer,BusinessSerializer,ProfileSerializer,HoodSerializer,JoinSerializer,PostSerializer
+from .serializers import NeighbourhoodSerializer,BusinessSerializer,ProfileSerializer,JoinSerializer,PostSerializer
 from rest_framework import viewsets
-from .models import Neighbourhood,Business,Post,Join,Profile,Hood
+from .models import Neighbourhood,Business,Post,Join,Profile
 from .permissions import IsAdminOrReadOnly
 
 # Create your views here.
@@ -34,9 +34,6 @@ class ProfileSetView(viewsets.ViewSet):
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
 
-class HoodListView(generics.ListAPIView):
-    serializer_class = HoodSerializer
-    queryset = Hood.objects.all()
 
 class JoinSetView(viewsets.ModelViewSet):
     serializer_class = JoinSerializer

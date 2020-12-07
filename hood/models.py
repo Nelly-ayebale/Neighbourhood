@@ -71,22 +71,13 @@ class Post(models.Model):
     def delete_post(self):
         self.delete()
 
-class Hood(models.Model):
-    hood_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    hood_name = models.CharField(max_length=50)
-    location = models.CharField(max_length=50)
-    count = models.IntegerField(default=0)
-    admin = models.ForeignKey(CustomUser,on_delete=models.CASCADE,default='')
-    
-    def __str__(self):
-        return self.name
-    
+
 
 
 class Join(models.Model):
     user = models.ForeignKey(CustomUser,on_delete=models.CASCADE,related_name='hood_join_user')
-    hood_name = models.ForeignKey(Hood,on_delete=models.CASCADE,related_name='hood_join')
-    location = models.ForeignKey(Hood , on_delete=models.CASCADE, related_name="hood_location_user",default='')
+    hood_name = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE,related_name='hood_join')
+    location = models.ForeignKey(Neighbourhood , on_delete=models.CASCADE, related_name="hood_location_user",default='')
 
     def __str__(self):
         return self.description
@@ -102,8 +93,8 @@ class Join(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    location = models.ForeignKey(Hood, on_delete=models.CASCADE)
-    hood_name = models.ForeignKey(Hood,on_delete=models.CASCADE, related_name='profile_name')
+    location = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    hood_name = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE, related_name='profile_name')
     avatar = CloudinaryField('image')
 
     def __str__(self):

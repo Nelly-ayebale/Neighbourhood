@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from . import models
-from .models import Neighbourhood,Business,Post,Join,Profile,Hood
+from .models import Neighbourhood,Business,Post,Join,Profile
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,10 +30,6 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = '__all__'
 
-class HoodSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Hood
-        fields = '__all__'
 
 class JoinSerializer(serializers.ModelSerializer):
     class Meta:
