@@ -8,9 +8,11 @@
 </tr>
 </table>
 
-## [Usage](https://backend-hood.herokuapp.com/)
+## [Usage for the Backend](https://backend-hood.herokuapp.com/)
 
 ## [Front End](https://github.com/FredAtei/NeighbourHood)
+
+## [Usage for Front-end](https://mystifying-kowalevski-398c29.netlify.app/login)
 
 ### Development
 Want to contribute? Great!
