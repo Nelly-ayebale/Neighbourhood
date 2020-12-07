@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 from . import models
 from . import serializers
-from .serializers import NeighbourhoodSerializer,BusinessSerializer,ProfileSerializer,HoodSerializer,JoinSerializer
+from .serializers import NeighbourhoodSerializer,BusinessSerializer,ProfileSerializer,HoodSerializer,JoinSerializer,PostSerializer
 from rest_framework import viewsets
 from .models import Neighbourhood,Business,Post,Join,Profile,Hood
 from .permissions import IsAdminOrReadOnly
