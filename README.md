@@ -67,6 +67,7 @@ This website was helpful in extending the Django User Model [here](https://simpl
 - REGISTER [For All Users ] : https://backend-hood.herokuapp.com/auth/signup/
 - LOGIN [For All Users ] : https://backend-hood.herokuapp.com/auth/login/
 - For Posts [Posts and Their Information]: https://backend-hood.herokuapp.com/posts
+- To Join a hood : https://backend-hood.herokuapp.com/join
 
 [MIT](LICENSE) ©
 
