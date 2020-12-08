@@ -10,7 +10,7 @@
 
 ## [Usage for the Backend](https://backend-hood.herokuapp.com/)
 
-## [Front End](https://github.com/FredAtei/NeighbourHood)
+## [Front End](https://github.com/FredAtei/neighbourhood-project)
 
 ## [Usage for Front-end](https://mystifying-kowalevski-398c29.netlify.app/login)
 
