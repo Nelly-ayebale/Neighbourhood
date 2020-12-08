@@ -56,7 +56,7 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 
 ## Resources
-This website was helpful in extending the Django User Model [here](https://simpleisbetterthancomplex.com/tutorial/2016/07/22/how-to-extend-django-user-model.html).
+- [here](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html)
 
 ## Admin Information
 - Username : Ayebale
