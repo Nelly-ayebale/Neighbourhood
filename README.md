@@ -56,7 +56,8 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 
 ## Resources
-- [here](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html)
+- [Multiple User Types with Django](https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html)
+- [Integrating Django and Angular](https://humberto.io/blog/jwt-authentication-with-angular-and-django/)
 
 ## Admin Information
 - Username : Ayebale
