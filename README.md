@@ -10,7 +10,7 @@
 
 ## [Usage for the Backend](https://backend-hood.herokuapp.com/)
 
-## [Front End]
+## Front End
 
 Find the Front-End to this page [here](https://github.com/FredAtei/neighbourhood-project).
 
